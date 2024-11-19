@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>boardList.html</title>
+</head>
+<body>
+게시글 목록<br />
+<a href="boardWrite">게시글 쓰기</a><br />
+<table width="600" border=1>
+<tr><td>게시글 번호</td><td>글쓴이</td><td>제목</td></tr>
+
+<tr th:each = "dto : ${list}">
+<td><a th:href="|boardDetail?boardNum=${dto.boardNum}|">[[${dto.boardNum}]]</a></td>
+<td><a th:href="|boardDetail?boardNum=${dto.boardNum}|">[[${dto.boardWriter}]]</a></td>
+<td><a th:href="|boardDetail?boardNum=${dto.boardNum}|">[[${dto.boardSubject}]]</a></td>
+</tr>
+
+</table>
+
+</body>
+</html>
